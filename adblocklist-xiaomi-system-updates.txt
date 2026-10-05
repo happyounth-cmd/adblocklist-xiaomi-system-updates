@@ -1,0 +1,36 @@
+! Title: 小米MIUI‑HyperOS OTA更新拦截【完整版】
+! Description: 拦截MIUI / HyperOS系统OTA更新，最小副作用，适用于AdGuard Home
+! Syntax: AdBlock 标准过滤语法
+! Version: 1.2
+! Last modified: 2026‑10‑05
+! Note1: 适用于国行小米/红米设备；国际版设备请删除行首#启用对应规则
+! Note2: 不会拦截小米账号、云服务、应用商店、消息推送、安全中心
+! Note3: 删除全部规则即可恢复系统OTA更新
+
+# ========== OTA核心查询接口 ==========
+||update.miui.com^
+||ota.miui.com^
+||miuiofflineupdate.miui.com^
+
+# ========== ROM下载CDN服务器 (MIUI + HyperOS澎湃OS，含备用源orig.bigota) ==========
+||bigota.d.miui.com^
+||bigota.c.miui.com^
+||bigota.g.miui.com^
+||orig.bigota.d.miui.com^
+||hugeota.d.miui.com^
+||ultimateota.d.miui.com^
+||rom.miui.com^
+||rom.pt.miui.srv^
+||cdn.miui.com^
+
+# ========== 云端灰度推送配置（必须拦截，防止远程绕过手机本地更新开关） ==========
+||config.miui.com^
+||cloudupdate.miui.com^
+||upgrade.miui.com^
+||remote.miui.com^
+
+# ========== 国际版/海外ROM额外规则（国行保持#注释；国际版删除行首#启用） ==========
+#||update.intl.miui.com^
+#||global.ota.miui.com^
+#||update.mi.com^
+#||ota.mi.com^
